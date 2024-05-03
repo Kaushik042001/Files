@@ -13,13 +13,13 @@ export class DisplayForm extends React.Component {
     
     render() {
         var trs = (this.state.records.length === 0) ? (
-            <tr><td colSpan="4"><h2>No data</h2></td></tr>
+            <tr><td colSpan="3"><h2>No data</h2></td></tr>
         ) : (
             this.state.records.map((e, index) => (
                 <tr key={index}>
-                    <td>{e.pname}</td>
-                    <td>{e.pdetails}</td>
-                    <td>{e.pcategory}</td>
+                    <td>{e.dtitle}</td>
+                    <td>{e.ddesc}</td>
+                    <td>{e.dstream}</td>
                 </tr>
             ))
         );
@@ -29,9 +29,9 @@ export class DisplayForm extends React.Component {
                 <table border="2">
                     <thead>
                         <tr>
-                            <th>P Name</th>
-                            <th>P Details</th>
-                            <th>P Category</th>
+                            <th>D Title</th>
+                            <th>D Desc</th>
+                            <th>D Stream</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -11,8 +11,8 @@ app.post("/insert",function(req,res){
     mong.connect(url,(err,db)=>{
         if(err) throw err
         var dbo=db.db('Practical2024')
-        var d={pname:req.body.pname,pdetails:req.body.pdetails,pcategory:req.body.pcategory}
-        dbo.collection("product").insertOne(d,(err,res)=>{
+        var d={dtitle:req.body.dtitle, ddesc:req.body.ddesc, dstream:req.body.dstream}
+        dbo.collection("degree").insertOne(d,(err,res)=>{
             if(err) throw err
             console.log('rec inserted')
             db.close()
@@ -23,7 +23,7 @@ app.get("/display",function(req,res){
     mong.connect(url,(err,db)=>{
         if(err) throw err
         var dbo=db.db('Practical2024')
-        dbo.collection("product").find({}).toArray((err,recs)=>{
+        dbo.collection("degree").find({}).toArray((err,recs)=>{
             if(err) throw err
             res.send(recs)
         }

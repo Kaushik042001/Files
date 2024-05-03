@@ -5,7 +5,7 @@ import { DisplayForm } from './DisplayForm'
 export class InsertForm extends React.Component{
     constructor(){
         super()
-        this.state={pname:'',pdetails:'',pcategory:''}
+        this.state={dtitle:'',ddesc:'',dstream:''}
     }
 
     handleChange=(e)=>{
@@ -21,9 +21,9 @@ export class InsertForm extends React.Component{
         return(
             <div className='data'>
             <form onSubmit={this.handleSubmit} >
-                <input type='text' name='pname' onChange={this.handleChange} placeholder='enter product  name'/>
-                <input type='text' name='pdetails' onChange={this.handleChange} placeholder='enter product  details'/>
-                <input type='text' name='pcategory' onChange={this.handleChange} placeholder='enter product  category'/>
+                <input type='text' name='dtitle' onChange={this.handleChange} placeholder='enter title'/>
+                <input type='text' name='ddesc' onChange={this.handleChange} placeholder='enter description'/>
+                <input type='text' name='dstream' onChange={this.handleChange} placeholder='enter stream'/>
 <button type='submit' >Submit</button>
             </form>
             <DisplayForm />
